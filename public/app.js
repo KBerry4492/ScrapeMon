@@ -1,19 +1,15 @@
-// Grab the articles as a json
+
 $.getJSON("/articles", function(data) {
-  // For each one
+
   for (var i = 0; i < data.length; i++) {
-    // Display the apropos information on the page
 
     var card = $("<div class='card articleLI'>");
-    // card.addClass("card");
-    var header = $("<a href='" + data[i].link + "'> <h3>" + data[i].title + "</h3> </a>");
+    var header = $("<a target='_blank' class='articleTitle' href='" + data[i].link + "'> <h5>" + data[i].title + "</h5> </a>");
     var content = $("<p  data-id='"+ data[i]._id +"' class='card-body'>" + data[i].summ + "</p>");
     card.append(header);
     card.append(content);
 
-    $("#articles").append(card
-      // "<div class='card'> <a class='card-header' data-id='"+ data[i]._id +"' href='" + data[i].link + "'> <h3>" + data[i].title + "</h1> </a> <p class='card-body'>" + data[i].summ + "</p> </div>"
-      );
+    $("#articles").append(card);
   }
 });
 
@@ -34,7 +30,7 @@ $(document).on("click", "p", function() {
     .done(function(data) {
       console.log(data);
       // The title of the article
-      $("#comments").append("<h2>" + data.title + "</h2>");
+      $("#comments").append("<h5 class='articleTitle'>" + data.title + "</h5>");
       // An input to enter a new title
       $("#comments").append("<input id='titleinput' name='title' >");
       // A textarea to add a new comment body

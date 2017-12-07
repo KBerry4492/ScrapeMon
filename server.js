@@ -46,8 +46,6 @@ app.get('/scrape', function(req, res) {
       // Save an empty result object
       var result = {};
 
-      console.log("PING")
-
       // Add the text and href of every link, and save them as properties of the result object
       result.title = $(this)
         .children('header').children('h1').children('a')
@@ -59,7 +57,6 @@ app.get('/scrape', function(req, res) {
         .children('div.item__content').children('div.excerpt').children('p')
         .text();
 
-      
       console.log("-------");
       console.log(result);
       console.log("-------");
@@ -75,7 +72,7 @@ app.get('/scrape', function(req, res) {
           res.json(err);
         });
     });
-    res.send('Articles Scraped');
+    console.log('Articles Scraped');
   });
 });
 

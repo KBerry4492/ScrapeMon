@@ -1,41 +1,71 @@
 
 body {
 
-  background-color: #E2FFF9
+  background-color: #F7ECDB
 
   }
 
 .titleBox{
   text-align: center;
   margin: 5px;
-  border: solid black 1px;
+  border: solid #6F6859 1px;
   border-radius: 10px;
-  background-color: #CEF1F0;
+  background-color: #E6DCCC;
+  color: #F7C32E;
+  text-shadow:  2px 1.5px #A05700;
 }
 
 #wrapper {
 
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 90%;
+  margin-left: 20px;
+  margin-right: 20px;
   padding-top: 5%;
 
 }
 #articles {
-
   display: inline-block;
-  overflow: auto;
-  width: 60%;
-  height: 700px;
-  border: solid black 1px;
 }
 
 .articleLI{
+  float: left;
+  width: 48%;
+  height: 300px;
   margin: 5px;
-  border: solid black 1px;
+  padding: 5px;
+  border: solid #6F6859 1px;
   border-radius: 10px;
-  background-color: #CEF1F0;
+  background-color: #E6DCCC;
 }
+
+.articleLI p{
+  overflow-y: auto;
+}
+
+.articleTitle{
+  border:solid #6F6859 1px;
+  border-radius: 10px;
+  background-color: #C5B898;
+  padding: 5px;
+
+}
+
+a:link {
+  color: #FFD564;
+  text-shadow:  1.5px 1.5px #A05700;
+}
+
+a.articleTitle:visited {
+  color: #F97429;
+  text-shadow:  1.5px 1.5px #A05700;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
 #comments {
 
   float: right;
@@ -46,7 +76,7 @@ textarea, input {
 
   display: block;
   width: 100%;
-  background-color: #CEF1F0;
+  background-color: #C5B898;
 
 }
 input {
