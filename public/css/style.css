@@ -15,6 +15,15 @@ body {
   text-shadow:  2px 1.5px #A05700;
 }
 
+.scrapeBtn{
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #E6DCCC;
+  color: black;
+  font-weight: bold;
+}
+
 #wrapper {
 
   width: 90%;
@@ -47,7 +56,6 @@ body {
   border-radius: 10px;
   background-color: #C5B898;
   padding: 5px;
-
 }
 
 a:link {
@@ -72,6 +80,12 @@ a.articleTitle:visited {
   width: 30%;
 
 }
+
+.comCard{ 
+  margin: 5px;
+  background-color: #E6DCCC;
+}
+
 textarea, input {
 
   display: block;

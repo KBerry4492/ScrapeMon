@@ -28,7 +28,7 @@ $(document).on("click", "p", function() {
   })
     // With that done, add the comment information to the page
     .done(function(data) {
-      console.log(data);
+      // console.log(data);
       // The title of the article
       $("#comments").append("<h5 class='articleTitle'>" + data.title + "</h5>");
       // An input to enter a new title
@@ -40,11 +40,39 @@ $(document).on("click", "p", function() {
 
       // If there's a comment in the article
       if (data.comment) {
-        // Place the title of the comment in the title input
-        $("#titleinput").val(data.comment.title);
-        // Place the body of the comment in the body textarea
-        $("#bodyinput").val(data.comment.body);
+        console.log(data.comment);
+        data.comment.forEach(function(comments){
+          console.log(comments);
+          console.log("---------");
+
+          var commentCard = $("<div class='card comCard'>");
+          var cHead = $("<h5 class='card-header'>" + comments.title + "</h5>");
+          var commCont = $("<p class='card-body'>" + comments.body + "</p>");
+          commentCard.append(cHead);
+          commentCard.append(commCont);
+
+          $("#comments").append(commentCard);
+
+        })
+        // // Place the title of the comment in the title input
+        // $("#titleinput").val(data.comment.title);
+        // // Place the body of the comment in the body textarea
+        // $("#bodyinput").val(data.comment.body);
+
       }
+    });
+});
+
+$(document).on("click", ".scrapeBtn", function() {
+
+  // Now make an ajax call for the Article
+  $.ajax({
+    method: "GET",
+    url: "/scrape"
+  })
+    // With that done, add the comment information to the page
+    .done(function(data) {
+      console.log(data);
     });
 });
 
@@ -67,7 +95,7 @@ $(document).on("click", "#save_comment", function() {
     // With that done
     .done(function(data) {
       // Log the response
-      console.log(data);
+      // console.log(data);
       // Empty the comments section
       $("#comments").empty();
     });
