@@ -1,7 +1,16 @@
 
 $.getJSON("/articles", function(data) {
 
-  for (var i = 0; i < data.length; i++) {
+  var inc = 0;
+
+  if (data.length>20) {
+    inc = 20;
+  }
+  else{
+    inc = data.length;
+  }
+
+  for (var i = 0; i < inc; i++) {
 
     var card = $("<div class='card articleLI'>");
     var header = $("<a target='_blank' class='articleTitle' href='" + data[i].link + "'> <h5>" + data[i].title + "</h5> </a>");
